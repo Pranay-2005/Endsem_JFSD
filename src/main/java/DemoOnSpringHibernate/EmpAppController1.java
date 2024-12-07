@@ -1,0 +1,20 @@
+package DemoOnSpringHibernate;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+
+public class EmpAppController1 {
+	@Autowired
+   EmployeeDAO dao; 
+	@GetMapping("/add")
+	public String Add(Model m) {
+		Employee e = new Employee();
+		m.addAttribute("Command",e);
+		return("add");
+		
+	}
+}
